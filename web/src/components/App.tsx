@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { debugData } from "../utils/debugData";
 import { fetchNui } from "../utils/fetchNui";
-
+import { useNuiEvent } from "../hooks/useNuiEvent";
+import { isEnvBrowser } from "../utils/misc";
 // This will set the NUI to visible if we are
 // developing in browser
 debugData([
@@ -35,6 +36,26 @@ interface ReturnData {
 
 const App: React.FC = () => {
   const [clientData, setClientData] = useState<ReturnData | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useNuiEvent<boolean>("setVisible", setVisible);
+
+  // Handle pressing escape/backspace
+  useEffect(() => {
+    // Only attach listener when we are visible
+    if (!visible) return;
+
+    const keyHandler = (e: KeyboardEvent) => {
+      if (["Backspace", "Escape"].includes(e.code)) {
+        if (!isEnvBrowser()) fetchNui("hideFrame");
+        else setVisible(!visible);
+      }
+    };
+
+    window.addEventListener("keydown", keyHandler);
+
+    return () => window.removeEventListener("keydown", keyHandler);
+  }, [visible]);
 
   const handleGetClientData = () => {
     fetchNui<ReturnData>("getClientData")
