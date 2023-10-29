@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { debugData } from "../utils/debugData";
-import { fetchNui } from "../utils/fetchNui";
-import { useNuiEvent } from "../hooks/useNuiEvent";
-import { isEnvBrowser } from "../utils/misc";
+import { debugData } from "./utils/debugData";
+import { fetchNui } from "./utils/fetchNui";
+import { useNuiEvent } from "./hooks/useNuiEvent";
+import { isEnvBrowser } from "./utils/misc";
+
 // This will set the NUI to visible if we are
 // developing in browser
 debugData([
@@ -40,9 +41,7 @@ const App: React.FC = () => {
 
   useNuiEvent<boolean>("setVisible", setVisible);
 
-  // Handle pressing escape/backspace
   useEffect(() => {
-    // Only attach listener when we are visible
     if (!visible) return;
 
     const keyHandler = (e: KeyboardEvent) => {
