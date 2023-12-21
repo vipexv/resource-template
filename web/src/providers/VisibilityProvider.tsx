@@ -60,5 +60,5 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({
 
 export const useVisibility = () =>
   useContext<VisibilityProviderValue>(
-    VisibilityCtx as Context<VisibilityProviderValue>
+    VisibilityCtx as Context<VisibilityProviderValue>,
   );
