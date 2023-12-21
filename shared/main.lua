@@ -1,38 +1,3 @@
----@param action string The action you wish to target
----@param data any The data you wish to send along with this action
-function UIMessage(action, data)
-  SendNUIMessage({
-    action = action,
-    data = data
-  })
-end
-
----@class ZoneInfo
----@field blip table
----@field cancelDistance number
----@field cooldown integer
----@field drawText table
----@field hacking boolean
----@field interactButton integer
----@field interactDistance number
----@field label string
----@field marker table
----@field name string
----@field requireGun boolean
----@field requiredPolice integer
----@field rewardAmount table
----@field timeToRob integer
----@field vec3 vector3
----@field viewDistance number
-
--- function ShowHelpText(coords, text)
---   AddTextEntry('HelpText', text)
---   SetFloatingHelpTextWorldPosition(1, coords)
---   SetFloatingHelpTextStyle(1, 1, 2, -1, 3, 0)
---   BeginTextCommandDisplayHelp('HelpText')
---   EndTextCommandDisplayHelp(2, false, false, -1)
--- end
-
 function ShowFloatingText(coords, msg)
   AddTextEntry('floatingTextNotification', msg)
   SetFloatingHelpTextWorldPosition(1, coords)
@@ -64,10 +29,8 @@ function AddBlip(coords, text, sprite, colour, scale, removeBlip)
   return blip
 end
 
-local debugIsEnabled = GetConvarInt(('%s-debugMode'):format(currentResourceName), 0) == 1
-
 function Debug(...)
-  if not debugIsEnabled then return end
+  if not Config.Debug then return end
   local args <const> = { ... }
 
   local appendStr = ''

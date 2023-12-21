@@ -2,13 +2,32 @@ fx_version "cerulean"
 lua54 'yes'
 game 'gta5'
 
-ui_page 'web/build/index.html'
+author 'vipex'
+ui_page 'web/dist/index.html'
 
-client_script "client/**/*"
-shared_script "shared/utils.lua"
-server_script "server/**/*"
+shared_scripts {
+	"shared/main.lua",
+	"shared/types.lua"
+}
+
+client_scripts {
+	'client/cl_utils.lua',
+	'client/Classes/**/*',
+	'client/core.lua',
+	'client/events.lua',
+	'client/nui_callbacks.lua',
+	'client/commands.lua',
+}
+
+server_scripts {
+	"server/sv_utils.lua",
+	"server/Classes/**/*",
+	"server/core.lua",
+	"server/events.lua",
+	"server/commands.lua"
+}
 
 files {
-	'web/build/index.html',
-	'web/build/**/*',
+	'web/dist/index.html',
+	'web/dist/**/*',
 }
