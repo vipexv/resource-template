@@ -20,11 +20,12 @@ client_scripts {
 }
 
 server_scripts {
+	"server/versionChecker.lua",
 	"server/sv_utils.lua",
 	"server/Classes/**/*",
 	"server/core.lua",
 	"server/events.lua",
-	"server/commands.lua"
+	"server/commands.lua",
 }
 
 files {
