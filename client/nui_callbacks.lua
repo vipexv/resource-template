@@ -4,6 +4,7 @@ RegisterNUICallback('hideFrame', function(_, cb)
     cb({})
 end)
 
+-- ex.
 RegisterNUICallback('getClientData', function(data, cb)
     local curCoords = GetEntityCoords(PlayerPedId())
 
