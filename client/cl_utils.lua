@@ -10,6 +10,7 @@ end
 function ToggleNuiFrame(shouldShow)
     SetNuiFocus(shouldShow, shouldShow)
     UIMessage('setVisible', shouldShow)
+    Debug("(func) [ToggleNuiFrame] \n (param) shouldShow: ", shouldShow)
 end
 
 function GetNuiPosFromCoords(coords)
