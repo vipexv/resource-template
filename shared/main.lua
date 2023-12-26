@@ -1,11 +1,3 @@
-function ShowFloatingText(coords, msg)
-  AddTextEntry('floatingTextNotification', msg)
-  SetFloatingHelpTextWorldPosition(1, coords)
-  SetFloatingHelpTextStyle(1, 1, 2, -1, 3, 0)
-  BeginTextCommandDisplayHelp('floatingTextNotification')
-  EndTextCommandDisplayHelp(2, false, false, -1)
-end
-
 local currentResourceName = GetCurrentResourceName()
 
 function AddBlip(coords, text, sprite, colour, scale, removeBlip)
