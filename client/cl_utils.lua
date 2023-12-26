@@ -11,3 +11,9 @@ function ToggleNuiFrame(shouldShow)
     SetNuiFocus(shouldShow, shouldShow)
     UIMessage('setVisible', shouldShow)
 end
+
+function GetNuiPosFromCoords(coords)
+    if not coords then return false, {} end
+    local onScreen, x, y = GetScreenCoordFromWorldCoord(coords.x, coords.y, coords.z)
+    return onScreen, { left = tostring(x * 100) .. "%", top = tostring(y * 100) .. "%" }
+end
