@@ -1,6 +1,6 @@
 local currentResourceName = GetCurrentResourceName()
 
-function AddBlip(coords, text, sprite, colour, scale, removeBlip)
+function AddBlip(coords, text, sprite, colour, scale, temporaryBlip)
   local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
   SetBlipSprite(blip, sprite)
   SetBlipColour(blip, colour)
@@ -12,10 +12,10 @@ function AddBlip(coords, text, sprite, colour, scale, removeBlip)
   BeginTextCommandSetBlipName("STRING")
   AddTextComponentString(text)
   EndTextCommandSetBlipName(blip)
-  if removeBlip then
+  if temporaryBlip then
     SetTimeout(600 * 1000, function()
       RemoveBlip(blip)
-      print(("(DEBUG) Blip removed after 600 seconds since the removeBlip boolean was set to true once the AddBlip function was called."))
+      print(("(DEBUG) Blip removed after 600 seconds since the temporaryBlip boolean was set to true once the AddBlip function was called."))
     end)
   end
   return blip
