@@ -13,7 +13,10 @@ function ToggleNuiFrame(shouldShow)
     Debug("(func) [ToggleNuiFrame] \n (param) shouldShow: ", shouldShow)
 end
 
-function GetNuiPosFromCoords(coords)
+---@param coords vector3
+---@return boolean
+---@return table
+function Get2DCoordFrom3DCoord(coords)
     if not coords then return false, {} end
     local onScreen, x, y = GetScreenCoordFromWorldCoord(coords.x, coords.y, coords.z)
     return onScreen, { left = tostring(x * 100) .. "%", top = tostring(y * 100) .. "%" }
