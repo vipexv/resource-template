@@ -1,6 +1,6 @@
 RegisterNUICallback('hideFrame', function(_, cb)
     ToggleNuiFrame(false)
-    Debug('(cb) [hideFrame]')
+    Debug('[nuicb:hideFrame] called')
     cb({})
 end)
 
