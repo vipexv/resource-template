@@ -1,5 +1,12 @@
 local currentResourceName = GetCurrentResourceName()
 
+---@param coords vector
+---@param text string
+---@param sprite number
+---@param colour number
+---@param scale number
+---@param temporaryBlip boolean
+---@return number
 function AddBlip(coords, text, sprite, colour, scale, temporaryBlip)
   local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
   SetBlipSprite(blip, sprite)
@@ -23,6 +30,7 @@ end
 
 function Debug(...)
   if not Config.Debug then return end
+
   local args <const> = { ... }
 
   local appendStr = ''
