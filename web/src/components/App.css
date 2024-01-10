@@ -1,10 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rajdhani:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+@font-face {
+  font-family: Horizon;
+  src: url("../fonts/horizon.otf");
+}
+
+@font-face {
+  font-family: Horizon_2;
+  src: url("../fonts/horizon_outlined.otf");
+}
+
 .font-main {
   font-family: "Rajdhani", sans-serif;
-  text-shadow: 0 0 10px rgba(0, 89, 255, 1), 0 0 20px rgba(0, 89, 255, 1),
-    0 0 30px rgba(0, 89, 255, 1);
+}
+
+.font-roboto {
+  font-family: Roboto !important;
+}
+
+.font-horizon {
+  font-family: Horizon !important;
+}
+
+.font-horizon-2 {
+  font-family: Horizon_2 !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .coolstuff {
@@ -70,38 +94,6 @@ a:hover {
 
 .coolstuff:hover {
   border-color: #059669;
-}
-
-.font-roboto {
-  font-family: Roboto !important;
-}
-
-.font-horizon {
-  font-family: Horizon !important;
-}
-
-.font-horizon-2 {
-  font-family: Horizon_2 !important;
-}
-
-.font-main {
-  font-family: "Rajdhani", sans-serif;
-  text-shadow: 0 0 10px rgba(0, 89, 255, 1), 0 0 20px rgba(0, 89, 255, 1),
-    0 0 30px rgba(0, 89, 255, 1);
-}
-
-@font-face {
-  font-family: Horizon;
-  src: url("../fonts/horizon.otf");
-}
-
-@font-face {
-  font-family: Horizon_2;
-  src: url("../fonts/horizon_outlined.otf");
-}
-
-::-webkit-scrollbar {
-  display: none;
 }
 
 .boxshadow {
