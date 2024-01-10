@@ -1,4 +1,4 @@
--- Copy and pasta from ox_lib Credit: "https://github.com/overextended/ox_lib"
+-- Copy and pasta for VersionChecker func from ox_lib Credit: "https://github.com/overextended/ox_lib"
 VersionCheck = function(repository)
     local resource = GetInvokingResource() or GetCurrentResourceName()
 
