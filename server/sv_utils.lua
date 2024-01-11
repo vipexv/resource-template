@@ -1,3 +1,14 @@
+GetPlayerIdentifiersWithoutIP = function(player)
+    local identifiers = GetPlayerIdentifiers(player)
+    local cleanedIdentifiers = {}
+    for _, identifier in ipairs(identifiers) do
+        if not string.find(identifier, "ip:") then
+            table.insert(cleanedIdentifiers, identifier)
+        end
+    end
+    return cleanedIdentifiers
+end
+
 GetDiscordID = function(source)
     local returnValue = nil
     for idIndex = 1, GetNumPlayerIdentifiers(source) do
