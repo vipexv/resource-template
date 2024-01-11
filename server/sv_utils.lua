@@ -1,3 +1,13 @@
+GetDiscordID = function(source)
+    local returnValue = nil
+    for idIndex = 1, GetNumPlayerIdentifiers(source) do
+        if GetPlayerIdentifier(source, idIndex) ~= nil and GetPlayerIdentifier(source, idIndex):sub(1, #("discord:")) == "discord:" then
+            returnValue = GetPlayerIdentifier(source, idIndex):gsub("discord:", "")
+        end
+    end
+    return returnValue
+end
+
 -- Copy and pasta for VersionChecker func from ox_lib Credit: "https://github.com/overextended/ox_lib"
 VersionCheck = function(repository)
     local resource = GetInvokingResource() or GetCurrentResourceName()
