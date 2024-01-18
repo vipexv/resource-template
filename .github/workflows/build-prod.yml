@@ -5,7 +5,7 @@ name: Release
 on:
   push:
     tags:
-      - "v*.*.*"
+      - 'v*.*.*'
 
 jobs:
   create-release:
@@ -44,14 +44,14 @@ jobs:
       #   env:
       #     TGT_RELEASE_VERSION: ${{ github.ref_name }}
 
-      - name: Push manifest change
-        uses: EndBug/add-and-commit@v8
-        with:
-          add: fxmanifest.lua
-          push: true
-          author_name: Manifest Bumper
-          author_email: 41898282+github-actions[bot]@users.noreply.github.com
-          message: "chore: bump manifest version to ${{ github.ref_name }}"
+      # - name: Push manifest change
+      #   uses: EndBug/add-and-commit@v8
+      #   with:
+      #     add: fxmanifest.lua
+      #     push: true
+      #     author_name: Manifest Bumper
+      #     author_email: 41898282+github-actions[bot]@users.noreply.github.com
+      #     message: 'chore: bump manifest version to ${{ github.ref_name }}'
 
       - name: Update tag ref
         uses: EndBug/latest-tag@latest
@@ -69,10 +69,10 @@ jobs:
           cd ./temp && zip -r ../vReports.zip ./vReports
 
       - name: Create Release
-        uses: "marvinpinto/action-automatic-releases@v1.2.1"
+        uses: 'marvinpinto/action-automatic-releases@v1.2.1'
         id: auto_release
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: '${{ secrets.GITHUB_TOKEN }}'
           title: ${{ env.RELEASE_VERSION }}
           prerelease: false
           files: vReports.zip
