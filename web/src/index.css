@@ -21,17 +21,17 @@ body {
 
 @font-face {
   font-family: Horizon;
-  src: url("../fonts/horizon.otf");
+  src: url("./fonts/horizon.otf");
 }
 
 @font-face {
   font-family: Horizon_2;
-  src: url("../fonts/horizon_outlined.otf");
+  src: url("./fonts/horizon_outlined.otf");
 }
 
 @font-face {
   font-family: Tesla;
-  src: url("../fonts/TESLA.ttf");
+  src: url("./fonts/tesla.otf");
 }
 
 .font-main {
