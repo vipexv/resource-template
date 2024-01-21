@@ -12,7 +12,7 @@ debugData([
   },
 ]);
 
-const App: React.FC = () => {
+const Core: React.FC = () => {
   const [visible, setVisible] = useState(false);
 
   useNuiEvent<boolean>("setVisible", setVisible);
@@ -21,7 +21,7 @@ const App: React.FC = () => {
     if (!visible) return;
 
     const keyHandler = (e: KeyboardEvent) => {
-      if (["Backspace", "Escape"].includes(e.code)) {
+      if (["Escape"].includes(e.code)) {
         if (!isEnvBrowser()) fetchNui("hideFrame");
         else setVisible(!visible);
       }
@@ -39,4 +39,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Core;
