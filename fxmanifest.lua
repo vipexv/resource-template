@@ -6,13 +6,15 @@ author 'vipex'
 ui_page 'web/dist/index.html'
 
 shared_scripts {
+	"config.lua",
 	"shared/main.lua",
 	"shared/types.lua"
 }
 
 client_scripts {
 	'client/cl_utils.lua',
-	'client/Classes/**/*',
+	'client/classes/**/*',
+	'client/modules/**/*',
 	'client/core.lua',
 	'client/events.lua',
 	'client/nui_callbacks.lua',
@@ -20,9 +22,9 @@ client_scripts {
 }
 
 server_scripts {
-	"server/versionChecker.lua",
 	"server/sv_utils.lua",
-	"server/Classes/**/*",
+	"server/modules/**/*",
+	"server/classes/**/*",
 	"server/core.lua",
 	"server/events.lua",
 	"server/commands.lua",
