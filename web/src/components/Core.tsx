@@ -3,7 +3,7 @@ import { useNuiEvent } from "../hooks/useNuiEvent";
 import { debugData } from "../utils/debugData";
 import { fetchNui } from "../utils/fetchNui";
 import { isEnvBrowser } from "../utils/misc";
-import "./App.css";
+import "./Core.css";
 
 debugData([
   {
