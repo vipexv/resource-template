@@ -34,8 +34,17 @@ body {
   src: url("./fonts/tesla.otf");
 }
 
+@font-face {
+  font-family: Jetbrains Mono;
+  src: url("./fonts/JetBrainsMono.woff2");
+}
+
 .font-main {
   font-family: "Rajdhani", sans-serif;
+}
+
+.font-jetmono {
+  font-family: Jetbrains Mono;
 }
 
 .font-tesla {
