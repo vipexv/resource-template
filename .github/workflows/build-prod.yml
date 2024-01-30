@@ -5,7 +5,7 @@ name: Release
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 jobs:
   create-release:
@@ -21,10 +21,10 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.repository.default_branch }}
 
-      - name: Setup node
-        uses: actions/setup-node@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
-          node-version: 20.11.0
+          version: 8.15.1
 
       - name: Install dependencies
         run: cd web && pnpm i
@@ -69,10 +69,10 @@ jobs:
           cd ./temp && zip -r ../v-staffchat.zip ./v-staffchat
 
       - name: Create Release
-        uses: 'marvinpinto/action-automatic-releases@v1.2.1'
+        uses: "marvinpinto/action-automatic-releases@v1.2.1"
         id: auto_release
         with:
-          repo_token: '${{ secrets.GITHUB_TOKEN }}'
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
           title: ${{ env.RELEASE_VERSION }}
           prerelease: false
           files: v-staffchat.zip
