@@ -24,17 +24,17 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: 20.11.0
 
       - name: Install dependencies
-        run: cd web && npm install
+        run: cd web && pnpm i
 
       # - name: Bump package version
       #   run: npm version ${{ github.ref_name }}
       #   working-directory: web
 
       - name: Run build
-        run: npm run build
+        run: pnpm run build
         working-directory: web
         env:
           CI: false
@@ -61,12 +61,12 @@ jobs:
       - name: Bundle files
         run: |
           ls
-          mkdir -p ./temp/vReports
-          mkdir -p ./temp/vReports/web/
-          cp ./{LICENSE,README.md,fxmanifest.lua,config.lua,sv_config.lua} ./temp/vReports
-          cp -r ./{client,locales,server,shared} ./temp/vReports
-          cp -r ./web/dist ./temp/vReports/web/
-          cd ./temp && zip -r ../vReports.zip ./vReports
+          mkdir -p ./temp/v-staffchat
+          mkdir -p ./temp/v-staffchat/web/
+          cp ./{LICENSE,README.md,fxmanifest.lua,config.lua,sv_config.lua} ./temp/v-staffchat
+          cp -r ./{client,locales,server,shared} ./temp/v-staffchat
+          cp -r ./web/dist ./temp/v-staffchat/web/
+          cd ./temp && zip -r ../v-staffchat.zip ./v-staffchat
 
       - name: Create Release
         uses: 'marvinpinto/action-automatic-releases@v1.2.1'
@@ -75,7 +75,7 @@ jobs:
           repo_token: '${{ secrets.GITHUB_TOKEN }}'
           title: ${{ env.RELEASE_VERSION }}
           prerelease: false
-          files: vReports.zip
+          files: v-staffchat.zip
 
         env:
           CI: false
