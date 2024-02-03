@@ -19,6 +19,7 @@ client_scripts {
 	'client/events.lua',
 	'client/nui_callbacks.lua',
 	'client/commands.lua',
+	'client/debug/**/*'
 }
 
 server_scripts {
