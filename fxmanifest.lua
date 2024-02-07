@@ -37,3 +37,5 @@ files {
 	'web/dist/index.html',
 	'web/dist/**/*',
 }
+
+use_experimental_fxv2_oal "yes"
