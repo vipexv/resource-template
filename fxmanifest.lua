@@ -11,7 +11,7 @@ shared_scripts {
 	"config.lua",
 	"shared/main.lua",
 	"shared/types.lua",
-	-- "dev_testing/shared/**/*" -- Only use for Development purpose.
+	-- "dev/shared/**/*" -- Only use for Development purpose.
 }
 
 client_scripts {
@@ -22,7 +22,7 @@ client_scripts {
 	'client/events.lua',
 	'client/nui_callbacks.lua',
 	'client/commands.lua',
-	-- "dev_testing/client/**/*" -- Only use for Development purpose.
+	-- "dev/client/**/*" -- Only use for Development purpose.
 }
 
 server_scripts {
@@ -32,7 +32,7 @@ server_scripts {
 	"server/core.lua",
 	"server/events.lua",
 	"server/commands.lua",
-	-- "dev_testing/server/**/*" -- Only use for Development purpose.
+	-- "dev/server/**/*" -- Only use for Development purpose.
 }
 
 files {
