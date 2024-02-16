@@ -15,7 +15,7 @@ shared_scripts {
 }
 
 client_scripts {
-	'client/cl_utils.lua',
+	'client/utils.lua',
 	'client/classes/**/*',
 	'client/modules/**/*',
 	'client/core.lua',
@@ -26,7 +26,7 @@ client_scripts {
 }
 
 server_scripts {
-	"server/sv_utils.lua",
+	"server/utils.lua",
 	"server/modules/**/*",
 	"server/classes/**/*",
 	"server/core.lua",
