@@ -1,4 +1,4 @@
-import { isEnvBrowser } from "./misc";
+import { isEnvBrowser } from './misc';
 
 interface DebugEvent<T = unknown> {
   action: string;
@@ -12,17 +12,20 @@ interface DebugEvent<T = unknown> {
  * @param events - The event you want to cover
  * @param timer - How long until it should trigger (ms)
  */
-export const debugData = <P>(events: DebugEvent<P>[], timer = 1000): void => {
-  if (import.meta.env.MODE === "development" && isEnvBrowser()) {
+export const debugData: <P>(events: DebugEvent<P>[], timer?: number) => void = <P>(
+  events: DebugEvent<P>[],
+  timer = 1000
+): void => {
+  if (import.meta.env.MODE === 'development' && isEnvBrowser()) {
     for (const event of events) {
-      setTimeout(() => {
+      setTimeout((): void => {
         window.dispatchEvent(
-          new MessageEvent("message", {
+          new MessageEvent('message', {
             data: {
               action: event.action,
               data: event.data,
             },
-          }),
+          })
         );
       }, timer);
     }
