@@ -9,24 +9,18 @@ author 'vipex'
 shared_scripts {
 	"config.lua",
 	"shared/main.lua",
-	"shared/types.lua",
 	-- "dev/shared/**/*" -- Only use for Development purpose.
 }
 
 client_scripts {
 	'client/utils.lua',
 	'client/core.lua',
-	'client/events.lua',
-	'client/nui_callbacks.lua',
-	'client/commands.lua',
 	-- "dev/client/**/*" -- Only use for Development purpose.
 }
 
 server_scripts {
 	"server/utils.lua",
 	"server/core.lua",
-	"server/events.lua",
-	"server/commands.lua",
 	-- "dev/server/**/*" -- Only use for Development purpose.
 }
 
