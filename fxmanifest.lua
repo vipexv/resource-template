@@ -13,14 +13,12 @@ shared_scripts {
 }
 
 client_scripts {
-	'client/utils.lua',
-	'client/core.lua',
+	'client/main.lua',
 	-- "dev/client/**/*" -- Only use for Development purpose.
 }
 
 server_scripts {
-	"server/utils.lua",
-	"server/core.lua",
+	"server/main.lua",
 	-- "dev/server/**/*" -- Only use for Development purpose.
 }
 

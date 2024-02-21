@@ -1,4 +1,5 @@
 local interface = require "modules.interface.client"
+local utils = require "client.utils"
 
 --#region Events
 RegisterNetEvent("ResourceName:UIMessage", function(action, data)
