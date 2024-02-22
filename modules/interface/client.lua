@@ -13,7 +13,7 @@ end
 ---@param shouldShow boolean
 nui.toggleNuiFrame = function(shouldShow)
     SetNuiFocus(shouldShow, shouldShow)
-    nui.UIMessage("setVisible", shouldShow)
+    nui.message("setVisible", shouldShow)
 end
 
 return nui
