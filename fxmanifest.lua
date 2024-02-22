@@ -5,6 +5,18 @@ lua54 'yes'
 use_experimental_fxv2_oal "yes"
 
 author 'vipex'
+repository "HERE"
+
+shared_script "require.lua"
+
+ui_page 'web/dist/index.html'
+
+files {
+	"modules/**/client.lua",
+	"modules/**/shared.lua",
+	'web/dist/index.html',
+	'web/dist/**/*',
+}
 
 shared_scripts {
 	"config.lua",
@@ -20,12 +32,4 @@ client_scripts {
 server_scripts {
 	"server/main.lua",
 	-- "dev/server/**/*" -- Only use for Development purpose.
-}
-
-ui_page 'web/dist/index.html'
-
-files {
-	'web/dist/index.html',
-	'web/dist/**/*',
-	"modules/interface/client.lua",
 }
