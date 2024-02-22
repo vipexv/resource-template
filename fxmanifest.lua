@@ -27,4 +27,5 @@ ui_page 'web/dist/index.html'
 files {
 	'web/dist/index.html',
 	'web/dist/**/*',
+	"modules/interface/client.lua",
 }
