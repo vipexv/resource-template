@@ -1,35 +1,32 @@
 fx_version "cerulean"
-game 'gta5'
+game "gta5"
 
-lua54 'yes'
-use_experimental_fxv2_oal "yes"
-
-author 'vipex'
-repository "HERE"
-
-shared_script "require.lua"
-
-ui_page 'web/dist/index.html'
-
-files {
-	"modules/**/client.lua",
-	"modules/**/shared.lua",
-	'web/dist/index.html',
-	'web/dist/**/*',
-}
+author "vipex"
+version "1.0.0"
+repository "https://github.com/vipexv/resource-template"
 
 shared_scripts {
+	"require.lua",
 	"config.lua",
-	"shared/main.lua",
-	-- "dev/shared/**/*" -- Only use for Development purpose.
 }
 
 client_scripts {
-	'client/main.lua',
-	-- "dev/client/**/*" -- Only use for Development purpose.
+	"client/main.lua",
+	-- "dev/client/commands.lua", -- Uncheck for development commands.
 }
 
 server_scripts {
 	"server/main.lua",
-	-- "dev/server/**/*" -- Only use for Development purpose.
 }
+
+ui_page "web/dist/index.html"
+
+files {
+	"modules/interface/client.lua",
+	"modules/utils/shared.lua",
+	"web/dist/index.html",
+	"web/dist/**/*",
+}
+
+lua54 "yes"
+use_experimental_fxv2_oal "yes"
