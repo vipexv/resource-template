@@ -14,10 +14,10 @@ end)
 
 --#region Callbacks
 RegisterNuiCallback('hideFrame', function(_, cb)
+    cb(1)
+
     interface.toggle(false)
     Debug('[nuicb:hideFrame]')
-
-    cb({})
 end)
 
 RegisterNuiCallback('getClientData', function(data, cb)
