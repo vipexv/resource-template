@@ -4,7 +4,7 @@ local Debug = utils.Debug
 
 --#region Events
 RegisterNetEvent("ResourceName:UIMessage", function(action, data)
-    interface.UIMessage(action, data)
+    interface.message(action, data)
 
     Debug("(netEvent) [UIMessage] \n (param) action: ", json.encode(action), "\n (param) data: ", json.encode(data),
         "\n Invoking Resource: ",
@@ -14,7 +14,7 @@ end)
 
 --#region Callbacks
 RegisterNuiCallback('hideFrame', function(_, cb)
-    interface.ToggleNuiFrame(false)
+    interface.toggle(false)
     Debug('[nuicb:hideFrame]')
 
     cb({})
@@ -31,7 +31,7 @@ end)
 
 --#region Commands
 RegisterCommand(("show-nui-%s"):format(GetCurrentResourceName()), function()
-    interface.ToggleNuiFrame(true)
+    interface.toggle(true)
     Debug("[command:show-nui] ToggleNuiFrame called and set to true.")
 end, false)
 --#endregion Commands
