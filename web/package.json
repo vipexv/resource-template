@@ -12,6 +12,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@million/lint": "^0.0.58",
     "clsx": "^2.1.0",
     "million": "^2.6.4",
     "react": "^18.2.0",
