@@ -22,7 +22,7 @@ export const useExitListener: (visibleSetter: FrameVisibleSetter, cb?: () => voi
       if (LISTENED_KEYS.includes(e.code)) {
         setterRef.current(false);
         cb && cb();
-        fetchNui('bgarage:nui:hideFrame');
+        fetchNui('hideFrame');
       }
     };
 
