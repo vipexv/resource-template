@@ -19,7 +19,7 @@ const App: React.FC = () => {
   useExitListener(setVisible);
 
   return (
-    <div className="absolute top-2 right-2 font-main text-xl p-2 rounded-[2px] font-tesla bg-[#353542] text-white text-center">
+    <div className="absolute top-2 right-2 font-main text-xl p-2 rounded-[2px] font-nunito bg-[#353542] text-white text-center">
       Testing.
     </div>
   );
