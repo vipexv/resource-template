@@ -1,4 +1,4 @@
-import { useIntersection } from '@mantine/hooks';
+import { useIntersection } from './useIntersection';
 import React from 'react';
 
 export const useInfiniteScroll: (
